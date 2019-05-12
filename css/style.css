@@ -31,14 +31,23 @@ background-color (light gray): #B0B0B2
   }
   
   body {
-    display: block;
+    display: inline-block;
     height: 100%;
-    margin:0;
+    margin: 0px;
+    padding-bottom: 20px;
     width: 40%;
+    background-image: linear-gradient(to right, lightblue, white );
     
   }
 
   h2 {
     align-items: center;
     color: blue;
+    margin: 0px;
+    padding: 0px;
   }
+
+ p {
+   color: black;
+   margin: 0px;
+ }
