@@ -1,5 +1,4 @@
 
-
 var pokemonRepository = (function () {
 
     var repository = [ 
@@ -8,12 +7,7 @@ var pokemonRepository = (function () {
         {name: 'Butterfree', height: 7, types: ['bug',] }
     ];
     
-    //Element tags for the names of pokemon
-    var openingTag = '<h2 class="styleMe">',
-        closingTag = '</h2>';
-    //<p> tags for the pokemon attributes
-    var openPTag = '<p>',
-        closePTag = '</p>';
+  
     
     function add(repository) {
         repository.push(item)
@@ -23,40 +17,43 @@ var pokemonRepository = (function () {
         return repository;
     }
   
-    function forEach(name) {
-         return  repository.forEach(name);
-    }
-  
     
 
     return {
         getAll: getAll,
         add: add,
-        forEach: forEach
+       
     
         
     };
         
   })();
 
-pokemonRepository.forEach(function(name) {
-  console.log(name);
-    for (var i=0; i < repository.length; i++) {
-        if (repository[i].height == 7) {
-            document.write(openingTag + repository[i].name + closingTag + openPTag + ' (height: '  + repository[i].height + ') ' + closePTag + '<br>');
-        } else if (repository[i].types[0] === 'grass') {
-            document.write(openingTag + repository[i].name + closingTag + openPTag +  ' (height: ' + repository[i].height + ') -Wow thats big! ' + closePTag + '<br>');
-        } else if (repository[i].types[0] === 'fire') {
-            document.write(openingTag + repository[i].name + closingTag + openPTag + '(height: ' + repository[i].height + ') ' + closePTag + '<br>');
-        } else if (repository[i].types[1] === 'bug') {
-            document.write(openingTag + repository[i].name + closingTag + openPTag + '(height: ' + repository[i].height + ') ' + closePTag + '<br>');
-        } else {
-            document.write(openingTag + repository[i].name + closingTag + openPTag + ' (height: ' + repository[i].height + ') -Wow thats big! ' + closePTag + '<br>');
-        }
-    }
-  
-});
+  //Element tags for the names of pokemon
+    var openingTag = '<h2 class="styleMe">',
+        closingTag = '</h2>';
+    //<p> tags for the pokemon attributes
+    var openPTag = '<p>',
+        closePTag = '</p>';
 
+pokemonRepository.getAll().forEach(function(pokemon) {
+  console.log(pokemon);
+  if (pokemon.height == 7) {
+        document.write(openingTag + pokemon.name + closingTag + openPTag + ' (height: '  + pokemon.height + ') ' + closePTag + '<br>');
+        } 
+  else if (pokemon.types === 'grass') {
+            document.write(openingTag + pokemon.name + closingTag + openPTag +  ' (height: ' + pokemon.height + ') -Wow thats big! ' + closePTag + '<br>');
+        } 
+  else if (pokemon.types === 'fire') {
+            document.write(openingTag + pokemon.name + closingTag + openPTag + '(height: ' + pokemon.height + ') ' + closePTag + '<br>');
+        } 
+  else if (pokemon.types === 'bug') {
+            document.write(openingTag + pokemon.name + closingTag + openPTag + '(height: ' + pokemon.height + ') ' + closePTag + '<br>');
+        } 
+  else {
+            document.write(openingTag + pokemon.name + closingTag + openPTag + ' (height: ' + pokemon.height + ') -Wow thats big! ' + closePTag + '<br>');
+        }
+});
 
 
 
