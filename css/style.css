@@ -27,21 +27,18 @@ background-color (light gray): #B0B0B2
 
   html {
     height: 100%;
-    margin: 0;
+    margin: 0px;
   }
   
   body {
-    display: inline-block;
-    height: 100%;
-    margin: 0px;
-    padding-bottom: 20px;
-    width: 40%;
+   
+   
     background-image: linear-gradient(to right, lightblue, white );
     
   }
 
   h2 {
-    align-items: center;
+    
     color: blue;
     margin: 0px;
     padding: 0px;
@@ -51,3 +48,54 @@ background-color (light gray): #B0B0B2
    color: black;
    margin: 0px;
  }
+
+
+
+ .main-container {
+   display: flex;
+   justify-content: flex-start;
+   width: 350px;
+   height: 500px;
+ }
+
+ .ul-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   list-style-type: none;
+   margin: 0px;
+   padding: 0px;
+   height: 200px;
+   
+   
+ }
+
+ button {
+
+   /* overwrites browser defaults and resets the border */
+   border: none;
+   
+   /* takes the font from the outer container */
+   font-family: inherit;
+   /* styles the background color, font color, and text-decoration of the button */
+   background-color: var(--primary-color);
+   color: var(--eigth-color);
+   text-decoration: none;
+   /* adds spacing to the button */
+   padding: var(--normal-padding);
+   border-radius: 3px;
+   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+   border-bottom: 2px solid rgba(0,0,0,0.3);
+   transition: 0.2s opacity;
+   box-shadow: 4px 3px 19px 0px;
+
+ }
+
+ button:hover,
+  button:focus
+   {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+  }
