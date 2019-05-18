@@ -1,60 +1,59 @@
-
+//Start of IIFE
 var pokemonRepository = (function () {
 
-    var repository = [ 
-        {name: 'Bulbasaur', height: 21, types: ['grass', 'poison'] },
-        {name: 'Charmander', height: 14, types: ['fire'] },
-        {name: 'Butterfree', height: 7, types: ['bug',] }
-    ];
-    
+  var repository = [ 
+      {name: 'Bulbasaur', height: 21, types: ['grass', 'poison'] },
+      {name: 'Charmander', height: 14, types: ['fire'] },
+      {name: 'Butterfree', height: 7, types: ['bug',] }
+  ];
   
-    
-    function add(repository) {
-        repository.push(item)
-    }
 
-    function getAll() {
-        return repository;
-    }
   
-    
+  function add(repository) {
+      repository.push(item)
+  }
 
-    return {
-        getAll: getAll,
-        add: add,
-       
-    
-        
-    };
-        
-  })();
+  function getAll() {
+      return repository;
+  }
 
-  //Element tags for the names of pokemon
-    var openingTag = '<h2 class="styleMe">',
-        closingTag = '</h2>';
-    //<p> tags for the pokemon attributes
-    var openPTag = '<p>',
-        closePTag = '</p>';
 
-pokemonRepository.getAll().forEach(function(pokemon) {
-  console.log(pokemon);
-  if (pokemon.height == 7) {
-        document.write(openingTag + pokemon.name + closingTag + openPTag + ' (height: '  + pokemon.height + ') ' + closePTag + '<br>');
-        } 
-  else if (pokemon.types === 'grass') {
-            document.write(openingTag + pokemon.name + closingTag + openPTag +  ' (height: ' + pokemon.height + ') -Wow thats big! ' + closePTag + '<br>');
-        } 
-  else if (pokemon.types === 'fire') {
-            document.write(openingTag + pokemon.name + closingTag + openPTag + '(height: ' + pokemon.height + ') ' + closePTag + '<br>');
-        } 
-  else if (pokemon.types === 'bug') {
-            document.write(openingTag + pokemon.name + closingTag + openPTag + '(height: ' + pokemon.height + ') ' + closePTag + '<br>');
-        } 
-  else {
-            document.write(openingTag + pokemon.name + closingTag + openPTag + ' (height: ' + pokemon.height + ') -Wow thats big! ' + closePTag + '<br>');
-        }
+  
+
+  return {
+      getAll: getAll,
+      add: add,
+     
+      
+  };
+
+  function addListItem(pokemon) {
+  
+    var $newUL = documnet.createElement('ul');
+    var $newLi = document.createElement('li');
+    var $newButton = document.createElement('button');
+  
+    $newUL.classList('ul-container');
+    $newLi.setAttribute('type="button"');
+    $newLi.appendChild($newButton);
+    $newButton.innerHTML = pokemon.name;
+    document.querySelector('.ul-container').append($newLi);
+    $newButton.addEventListener('click', function (event) {
+      showDetails(pokemon);
+    });
+  
+  };
+  
+  function showDetails(pokemon) {
+    console.log(pokemonRepository.getAll());
+  };
+  
+      
+})(); //End of IIFE
+
+
+
+
+pokemonRepository.getAll().forEach(function(repository) {
+addListItem(repository);
 });
-
-
-
-
