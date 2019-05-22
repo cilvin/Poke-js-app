@@ -32,7 +32,7 @@ var pokemonRepository = (function () {
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = Object.keys(detail.types);
+      item.types = Object.keys(details.types);
     }).catch(function (e) { 
       console.error(e);
     });
