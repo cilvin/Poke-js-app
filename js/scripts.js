@@ -98,7 +98,7 @@ function getAll() {
     nameElement.innerText = item.name;
 
     //creating img in modal content
-    var imageElement = document.createElement('h1');
+    var imageElement = document.createElement('img');
     imageElement.classList.add('modal-img');
     imageElement.setAttribute('src', item.imageUrl);
 
